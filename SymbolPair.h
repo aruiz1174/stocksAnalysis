@@ -1,0 +1,4 @@
+class SymbolPair {
+ private:
+ public:
+};
