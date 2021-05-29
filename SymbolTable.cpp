@@ -1,15 +1,13 @@
 #include "SymbolTable.h"
-#include <iostream>
 
-SymbolTable(ifstream &fileIn) {
+SymbolTable::SymbolTable(std::ifstream &fileIn) {
     numSymbols = 0;
-    symbolPairs = new SymbolPair[10];
 }
 
-string SymbolTable::findCompany(string aCompany) {
+std::string SymbolTable::findCompany(std::string aCompany) {
     return "";
 }
 
-string SymbolTable::print() {
+std::string SymbolTable::print() {
     return "";
 }

@@ -1,9 +1,15 @@
+#ifndef SYMBOL_PAIR_H
+#define SYMBOL_PAIR_H
+#include <string>
+
 class SymbolPair {
  private:
-    string tickerSym;
-    string companyName;
+    std::string tickerSym;
+    std::string companyName;
  public:
     SymbolPair();
-    string getTickerSymbol();
-    string getCompanyName();
+    std::string getTickerSymbol();
+    std::string getCompanyName();
 };
+
+#endif
