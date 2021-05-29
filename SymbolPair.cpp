@@ -1,13 +1,13 @@
 #include "SymbolPair.h"
 
-SymbolPair() {
+SymbolPair::SymbolPair() {
     tickerSym = "";
     companyName = "";
 }
-string SymbolPair::getCompanyName() {
+std::string SymbolPair::getCompanyName() {
     return companyName;
 }
-string SymbolPair::getTickerSymbol() {
+std::string SymbolPair::getTickerSymbol() {
     return tickerSym;
 }
 
