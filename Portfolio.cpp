@@ -6,17 +6,17 @@ using namespace std;
 
 
 
-void processTransaction(char a, int num, double gainLoss, string sym)
+void Portfolio::processTransaction(char a, int num, double gainLoss, string sym)
 {
 
 }
 
-int findStock(string sym)
+int Portfolio::findStock(string sym)
 {
     return 0;
 }
 
-string toString()
+string Portfolio::toString()
 {
     return "";
 }

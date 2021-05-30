@@ -11,22 +11,22 @@ Stock::Stock(int shares, double purchase, string ticker)
 
 }
 
-string getTickersymbol()
+string Stock::getTickersymbol()
 {
-    return "";
+    return tickerSym;
 }
 
-int getSharesOwned()
+int Stock::getSharesOwned()
 {
-    return 0;
+    return sharesOwned;
 }
 
- double getPurchasePrice()
+double Stock::getPurchasePrice()
  {
-     return 0.0;
+     return purchasePrice;
  }
 
- void setSharesOwned(int shares)
+ void Stock::setSharesOwned(int shares)
  {
      shares = sharesOwned;
  }
