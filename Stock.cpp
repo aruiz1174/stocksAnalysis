@@ -28,5 +28,10 @@ int getSharesOwned()
 
  void setSharesOwned(int shares)
  {
-     shares = sharesOwned;
+     shares = 0;
  }
+
+string toString()
+{
+    return "";
+}
