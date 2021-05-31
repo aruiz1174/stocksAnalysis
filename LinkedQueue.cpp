@@ -6,8 +6,9 @@ using namespace std;
 template <class T>
 LinkedQueue<T>::LinkedQueue()
 {
-    front = NULL;
-    rear = NULL;
+    front = nullptr;
+    rear = nullptr;
+    count = 0;
 }
 
 template <class T>
@@ -27,7 +28,6 @@ void LinkedQueue<T>::enqueue(T item)
 
     count++;
 
-    delete temp;
 }
 
 template <class T>
@@ -43,7 +43,6 @@ T LinkedQueue<T>::dequeue()
 
     front = front->next;
 
-    delete temp;
     count--;
     return res;
 }
@@ -64,16 +63,13 @@ int LinkedQueue<T>::size()
 template <class T>
 void LinkedQueue<T>::display()
 {
-    cout << front->data << endl;
-    //  Node<T>* temp = front;
-    //  int a = 0;
+      Node<T>* temp = front;
+      int a = 0;
 
-    // while(a != 2)
-    // {
-    //     cout << temp->data << endl;
-    //     temp = temp->next;
-    //     a++;
-    
+     while(temp != nullptr) {
+         cout << temp->data << endl;
+         temp = temp->next;
+     }
 
 
 }

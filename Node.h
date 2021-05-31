@@ -10,9 +10,6 @@ class Node {
   Node<T> *next;
 
   Node(T a);
-  ~Node(){
-    //if (next) delete next;
-  }
 
   T get_data() const;
   Node<T>* get_next() const;
