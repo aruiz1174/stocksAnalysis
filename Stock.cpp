@@ -11,7 +11,9 @@ Stock::Stock(int shares, double purchase, string ticker)
 
 }
 
+
 string Stock::getTickerSymbol()
+
 {
     return tickerSym;
 }
