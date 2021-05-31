@@ -1,6 +1,6 @@
 all:	stocks
 
-stocks:	Main.o SymbolPair.o SymbolTable.o Stock.o Portfolio.o
+stocks:	Main.o SymbolPair.o SymbolTable.o Stock.o Portfolio.o  
 	g++ Main.o SymbolPair.o SymbolTable.o Stock.o Portfolio.o -o stocks
 
 Main.o:	Main.cpp
@@ -17,6 +17,8 @@ Stock.o: Stock.cpp Stock.h
 
 Portfolio.o: Portfolio.cpp Portfolio.h
 	g++ -c Portfolio.cpp
+
+
 
 clean:
 	rm -f *.o stocks

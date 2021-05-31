@@ -7,7 +7,7 @@ class SymbolPair {
     std::string tickerSym;
     std::string companyName;
  public:
-    SymbolPair();
+    SymbolPair(std::string ticker, std::string company);
     std::string getTickerSymbol();
     std::string getCompanyName();
 };

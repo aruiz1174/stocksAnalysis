@@ -5,30 +5,30 @@ using namespace std;
 
 Stock::Stock(int shares, double purchase, string ticker)
 {
-    shares = sharesOwned;
-    purchase = purchasePrice;
-    ticker = tickerSym;
+    sharesOwned = shares;
+    purchasePrice = purchase;
+    tickerSym = ticker;
 
 }
 
-string getTickersymbol()
+string Stock::getTickerSymbol()
 {
-    return "";
+    return tickerSym;
 }
 
-int getSharesOwned()
+int Stock::getSharesOwned()
 {
-    return 0;
+    return sharesOwned;
 }
 
- double getPurchasePrice()
+double Stock::getPurchasePrice()
  {
-     return 0.0;
+     return purchasePrice;
  }
 
- void setSharesOwned(int shares)
+ void Stock::setSharesOwned(int shares)
  {
-     shares = 0;
+     shares = sharesOwned;
  }
 
 string toString()
