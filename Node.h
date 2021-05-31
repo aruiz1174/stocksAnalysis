@@ -17,5 +17,6 @@ class Node {
   T get_data() const;
   Node<T>* get_next() const;
 };
+
 #include "Node.cpp"
 #endif
