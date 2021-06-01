@@ -14,10 +14,10 @@ int main()
 
     num.enqueue(a1);
     num.enqueue(a2);
-    // num.enqueue(a3);
-    // num.enqueue(a4);
+    num.enqueue(a3);
+    num.enqueue(a4);
     num.display();
-    cout << num.size() << endl;
+    //cout << num.size() << endl;
     return 0;
     
 }

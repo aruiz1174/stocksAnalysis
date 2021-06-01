@@ -13,3 +13,4 @@ template<class T>
 Node<T>* Node<T>::get_next() const {
   return next;
 }
+
