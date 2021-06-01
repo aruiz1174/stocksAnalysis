@@ -4,17 +4,18 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 #include "SymbolPair.h"
 
 class SymbolTable {
  private:
     int numSymbols;
-    SymbolPair symbolPairs[10];
+    std::vector<SymbolPair> symbolPairs;
  public:
     SymbolTable(std::ifstream &fileIn);
     std::string findCompany(std::string aCompany);
-    std::string print();
+    void print();
 };
 
 #endif
