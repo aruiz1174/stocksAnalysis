@@ -15,6 +15,7 @@ class Stock
 
 
     public:
+    Stock();
     Stock(int shares, double purchaseP, string ticker);
     string getTickerSymbol();
     int getSharesOwned();

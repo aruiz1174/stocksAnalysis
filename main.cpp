@@ -8,5 +8,6 @@ int main()
 {
     ifstream myFile("symboldata.txt");
     SymbolTable aTable(myFile);
+    aTable.print();
     myFile.close();
 }

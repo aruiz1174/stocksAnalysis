@@ -1,7 +1,18 @@
+#ifndef STOCK_CPP
+#define STOCK_CPP
+
 #include "Stock.h"
 #include <string>
 #include <iostream>
 using namespace std;
+
+Stock::Stock()
+{
+    tickerSym = nullptr;
+    sharesOwned = 0;
+    purchasePrice = 0.0;
+
+}
 
 Stock::Stock(int shares, double purchase, string ticker)
 {
@@ -12,8 +23,7 @@ Stock::Stock(int shares, double purchase, string ticker)
 }
 
 
-string Stock::getTickerSymbol()
-
+std::string Stock::getTickerSymbol()
 {
     return tickerSym;
 }
@@ -28,12 +38,15 @@ double Stock::getPurchasePrice()
      return purchasePrice;
  }
 
- void Stock::setSharesOwned(int shares)
+void Stock::setSharesOwned(int shares)
  {
-     shares = sharesOwned;
+     sharesOwned = shares;
  }
 
-string toString()
+std::string Stock::toString()
 {
-    return "";
+
+    return "Ticker: " + tickerSym + ", shares: " + to_string(sharesOwned) + ", Price: " + to_string(purchasePrice);
 }
+
+#endif
