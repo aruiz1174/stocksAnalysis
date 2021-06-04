@@ -15,8 +15,11 @@ class Portfolio
     double gainLoss;
 
     public:
+    Portfolio();
     Portfolio(SymbolTable symbol);
     void processTransaction(char a, int num, double gainLoss, string sym);
+    void buy(char a);
+    void sell(char a);
     int findStock(string sym);
     string toString();
 };

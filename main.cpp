@@ -1,5 +1,6 @@
 #include "LinkedQueue.h"
 #include "SymbolTable.h"
+#include "Portfolio.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -10,4 +11,6 @@ int main()
     SymbolTable aTable(myFile);
     aTable.print();
     myFile.close();
+
+    Portfolio a(aTable);
 }

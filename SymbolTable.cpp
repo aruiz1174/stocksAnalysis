@@ -1,9 +1,13 @@
 #include "SymbolTable.h"
 
+SymbolTable::SymbolTable()
+{
+    numSymbols = 0;
+}
 
 SymbolTable::SymbolTable(std::ifstream &fileIn)
 {
-    numSymbols = 0;
+    
     std::string line;
     if (fileIn.is_open()) {
         while (getline(fileIn, line)) {
@@ -29,4 +33,12 @@ void SymbolTable::print() {
     for (int i = 0; i < numSymbols; i++) {
         std::cout << symbolPairs[i].getCompanyName() << std::endl;
     }
+}
+
+SymbolTable& SymbolTable::operator=(const SymbolTable& other)
+{
+    std::cout << "ey" << std::endl;
+    numSymbols = other.numSymbols;
+    symbolPairs = other.symbolPairs;
+
 }

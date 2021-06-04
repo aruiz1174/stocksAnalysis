@@ -13,9 +13,11 @@ class SymbolTable {
     int numSymbols;
     std::vector<SymbolPair> symbolPairs;
  public:
+    SymbolTable();
     SymbolTable(std::ifstream &fileIn);
     std::string findCompany(std::string aCompany);
     void print();
+    SymbolTable& operator=(const SymbolTable& other);
 };
 
 #endif
