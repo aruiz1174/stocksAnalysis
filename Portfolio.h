@@ -10,6 +10,7 @@ using namespace std;
 class Portfolio
 {
     private:
+    
     int numStocks;
     SymbolTable symbols;
     double gainLoss;

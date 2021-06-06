@@ -21,6 +21,8 @@ class LinkedQueue
     bool isEmpty();
     int size();
     void display();
+
+    Node<T> *getFront() const;
 };
 
 #include "LinkedQueue.cpp"

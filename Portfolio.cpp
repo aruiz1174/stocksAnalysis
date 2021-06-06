@@ -24,7 +24,7 @@ void Portfolio::processTransaction(char a, int num, double gainLoss, string sym)
 
 void Portfolio::buy(char a)
 {
-
+    
 }
 
 void Portfolio::sell(char a)
