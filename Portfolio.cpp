@@ -13,7 +13,7 @@ Portfolio::Portfolio()
 
 Portfolio::Portfolio(SymbolTable symbol)
 {
-    cout << "hello" << endl;
+   // cout << "hello" << endl;
     symbols = symbol;
 }
 
@@ -29,7 +29,7 @@ void Portfolio::buy(char a)
 
 void Portfolio::sell(char a)
 {
-    
+
 }
 
 int Portfolio::findStock(string sym)
