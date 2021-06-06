@@ -74,3 +74,8 @@ void LinkedQueue<T>::display()
 
 }
 
+template<class T>
+Node<T> *LinkedQueue<T>::getFront() const {
+    return front;
+}
+
