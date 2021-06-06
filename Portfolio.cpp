@@ -17,14 +17,29 @@ Portfolio::Portfolio(SymbolTable symbol)
     symbols = symbol;
 }
 
-void Portfolio::processTransaction(char a, int num, double gainLoss, string sym)
+void Portfolio::processTransaction(char a, int num, double price, string sym)
 {
-
+    if (a == 'b')
+        buy(num, price, sym);
+    else if (a == 's')
+        sell(a);
+    else
+        cout << "invalid transaction" << endl;
 }
 
-void Portfolio::buy(char a)
+void Portfolio::buy(int numShares, double price, string sym)
 {
-    
+    Stock aStock(numShares, price, sym);
+    LinkedQueue<Stock> aQueue;
+    int index = findStock(sym);
+    if (index != -1) { //is it in our portfolio already?
+        stocks[index].enqueue(aStock);
+    } else {
+        aQueue.enqueue(aStock);
+        stocks.push_back(aQueue);
+        numStocks++;
+    }
+
 }
 
 void Portfolio::sell(char a)
@@ -34,7 +49,14 @@ void Portfolio::sell(char a)
 
 int Portfolio::findStock(string sym)
 {
-    return 0;
+    for (int i = 0; i < numStocks; i++) 
+    {
+        if (stocks[i].getFront()->get_data().getTickerSymbol() == sym) 
+        {
+            return i;
+        }
+    }
+    return -1;
 }
 
 string Portfolio::toString()
