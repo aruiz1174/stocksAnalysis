@@ -18,6 +18,7 @@ class SymbolTable {
     std::string findCompany(std::string aCompany);
     void print();
     SymbolTable& operator=(const SymbolTable& other);
+    SymbolTable(const SymbolTable& other);
 };
 
 #endif
