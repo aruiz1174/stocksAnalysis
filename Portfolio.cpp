@@ -13,8 +13,9 @@ Portfolio::Portfolio()
 
 Portfolio::Portfolio(SymbolTable symbol)
 {
-   // cout << "hello" << endl;
+    numStocks = 0;
     symbols = symbol;
+    gainLoss = 0.0;
 }
 
 void Portfolio::processTransaction(char a, int num, double price, string sym)
@@ -55,9 +56,24 @@ void Portfolio::sell(int numShares, double price, string sym)
         while(temp > 0)
         {
             originalPrice = stocks[index].getFront()->data.getPurchasePrice();
-            gainLoss = gainLoss + ((originalPrice) * (price - originalPrice));
-            temp = temp - stocks[index].getFront()->data.getSharesOwned();
-            stocks[index].dequeue();
+            
+            if(temp > stocks[index].getFront()->data.getSharesOwned())
+            {
+               // originalPrice = stocks[index].getFront()->data.getPurchasePrice();
+                gainLoss = gainLoss + ((stocks[index].getFront()->data.getSharesOwned()) * (price - originalPrice));
+                temp = temp - stocks[index].getFront()->data.getSharesOwned();
+                
+                stocks[index].dequeue();
+            }
+            else
+            {
+               // originalPrice = stocks[index].getFront()->data.getPurchasePrice();
+                gainLoss = gainLoss + ((temp) * (price - originalPrice));
+                stocks[index].getFront()->data.setSharesOwned(stocks[index].getFront()->data.getSharesOwned() - temp);
+                temp = 0;
+                //stocks[index].getFront()->data.setSharesOwned(stocks[index].getFront()->data.getSharesOwned() - temp);
+
+            }
         }
     }
 

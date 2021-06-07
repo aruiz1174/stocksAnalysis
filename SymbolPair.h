@@ -10,6 +10,8 @@ class SymbolPair {
     SymbolPair(std::string ticker, std::string company);
     std::string getTickerSymbol();
     std::string getCompanyName();
+    SymbolPair& operator=(const SymbolPair& other);
+    SymbolPair(const SymbolPair& other);
 };
 
 #endif

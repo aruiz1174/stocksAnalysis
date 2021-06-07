@@ -49,4 +49,17 @@ std::string Stock::toString()
     return "Ticker: " + tickerSym + ", shares: " + to_string(sharesOwned) + ", Price: " + to_string(purchasePrice);
 }
 
+Stock::Stock(const Stock& other) {
+    tickerSym = other.tickerSym;
+    sharesOwned = other.sharesOwned;
+    purchasePrice = other.purchasePrice;
+}
+
+Stock& Stock::operator=(const Stock& other) {
+        tickerSym = other.tickerSym;
+        sharesOwned = other.sharesOwned;
+        purchasePrice = other.purchasePrice;
+        return *this;
+}
+
 #endif
