@@ -22,7 +22,7 @@ void Portfolio::processTransaction(char a, int num, double price, string sym)
     if (a == 'b')
         buy(num, price, sym);
     else if (a == 's')
-        sell(a);
+        sell(num, price, sym);
     else
         cout << "invalid transaction" << endl;
 }
@@ -42,8 +42,26 @@ void Portfolio::buy(int numShares, double price, string sym)
 
 }
 
-void Portfolio::sell(char a)
+void Portfolio::sell(int numShares, double price, string sym)
 {
+    Stock aStock(numShares, price, sym);
+    LinkedQueue<Stock> aQueue;
+    int temp = numShares;
+    int index = findStock(sym);
+    double originalPrice = 0.0;
+
+    if(index != -1)
+    {
+        while(temp > 0)
+        {
+            originalPrice = stocks[index].getFront()->data.getPurchasePrice();
+            gainLoss = gainLoss + ((originalPrice) * (price - originalPrice));
+            temp = temp - stocks[index].getFront()->data.getSharesOwned();
+            stocks[index].dequeue();
+        }
+    }
+
+
 
 }
 

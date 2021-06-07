@@ -24,7 +24,7 @@ class Portfolio
     Portfolio(SymbolTable symbol);
     void processTransaction(char a, int numShares, double price, string sym);
     void buy(int numShares, double price, string sym);
-    void sell(char a);
+   void sell(int numShares, double price, string sym);
     int findStock(string sym);
     string toString();
 
