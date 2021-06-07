@@ -33,17 +33,16 @@ void LinkedQueue<T>::enqueue(T item)
 template <class T>
 T LinkedQueue<T>::dequeue()
 {
-    if(isEmpty())
-    {
-        return;
-    }
 
-    Node<T>* temp = new Node<T>(front);
+    Node<T>* temp = new Node<T>(*front);
     T res = temp->data;
 
     front = front->next;
 
     count--;
+    if (count == 1)
+        rear = front;
+
     return res;
 }
 
