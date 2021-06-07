@@ -11,6 +11,5 @@ int main()
     SymbolTable aTable(myFile);
     aTable.print();
     myFile.close();
-
-    Portfolio a(aTable);
+    Portfolio b(aTable);
 }

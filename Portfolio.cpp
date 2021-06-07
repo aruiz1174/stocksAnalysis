@@ -13,8 +13,9 @@ Portfolio::Portfolio()
 
 Portfolio::Portfolio(SymbolTable symbol)
 {
-   // cout << "hello" << endl;
+    numStocks = 0;
     symbols = symbol;
+    gainLoss = 0.0;
 }
 
 void Portfolio::processTransaction(char a, int num, double price, string sym)

@@ -16,6 +16,8 @@ class Stock
 
     public:
     Stock();
+    Stock(const Stock& other);
+    Stock& operator=(const Stock& other);
     Stock(int shares, double purchaseP, string ticker);
     string getTickerSymbol();
     int getSharesOwned();

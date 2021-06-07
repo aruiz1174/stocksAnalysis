@@ -7,7 +7,7 @@ SymbolTable::SymbolTable()
 
 SymbolTable::SymbolTable(std::ifstream &fileIn)
 {
-    
+    numSymbols = 0;
     std::string line;
     if (fileIn.is_open()) {
         while (getline(fileIn, line)) {
@@ -31,14 +31,25 @@ std::string SymbolTable::findCompany(std::string aCompany) {
 
 void SymbolTable::print() {
     for (int i = 0; i < numSymbols; i++) {
+        std::cout << i << ".";
         std::cout << symbolPairs[i].getCompanyName() << std::endl;
     }
 }
 
 SymbolTable& SymbolTable::operator=(const SymbolTable& other)
 {
-    std::cout << "ey" << std::endl;
     numSymbols = other.numSymbols;
-    symbolPairs = other.symbolPairs;
 
+    for (int i = 0; i < numSymbols; i++) {
+        symbolPairs.push_back(other.symbolPairs[i]);
+        }
+    return *this;
+}
+
+SymbolTable::SymbolTable(const SymbolTable& other) {
+    numSymbols = other.numSymbols;
+
+    for (int i = 0; i < numSymbols; i++) {
+        symbolPairs.push_back(other.symbolPairs[i]);
+    }
 }
