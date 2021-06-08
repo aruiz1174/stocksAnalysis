@@ -4,27 +4,25 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-using namespace std;
 
-class Stock
-{
-    private:
-    string tickerSym;
+class Stock {
+private:
+    std::string tickerSym;
     int sharesOwned;
     double purchasePrice;
-
-
-    public:
+public:
     Stock();
     Stock(const Stock& other);
     Stock& operator=(const Stock& other);
-    Stock(int shares, double purchaseP, string ticker);
-    string getTickerSymbol();
+    Stock(int shares, double purchaseP, std::string ticker);
+
+    std::string getTickerSymbol();
     int getSharesOwned();
     double getPurchasePrice();
-    void setSharesOwned(int shares);
-    string toString();
 
+    void setSharesOwned(int shares);
+
+    std::string toString();
 };
 
 #endif

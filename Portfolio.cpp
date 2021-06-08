@@ -2,24 +2,20 @@
 #include "SymbolTable.h"
 #include <string>
 #include <iostream>
-using namespace std;
 
-Portfolio::Portfolio()
-{
+Portfolio::Portfolio() {
     numStocks = 0;
     gainLoss = 0.0;
-  
+
 }
 
-Portfolio::Portfolio(SymbolTable symbol)
-{
+Portfolio::Portfolio(SymbolTable symbol) {
     numStocks = 0;
     symbols = symbol;
     gainLoss = 0.0;
 }
 
-void Portfolio::processTransaction(string a, int num, double price, string sym)
-{
+void Portfolio::processTransaction(std::string a, int num, double price, std::string sym) {
     if (a == "b")
         buy(num, price, sym);
     else if (a == "s")
@@ -28,8 +24,7 @@ void Portfolio::processTransaction(string a, int num, double price, string sym)
         cout << "invalid transaction" << endl;
 }
 
-void Portfolio::buy(int numShares, double price, string sym)
-{
+void Portfolio::buy(int numShares, double price, std::string sym) {
     Stock aStock(numShares, price, sym);
     LinkedQueue<Stock> aQueue;
     int index = findStock(sym);
@@ -42,19 +37,16 @@ void Portfolio::buy(int numShares, double price, string sym)
     }
 }
 
-void Portfolio::sell(int numShares, double price, string sym)
-{
-    string a = sym.substr(0,sym.find_first_of("\r"));
+void Portfolio::sell(int numShares, double price, std::string sym) {
+    std::string a = sym.substr(0,sym.find_first_of("\r"));
     Stock aStock(numShares, price, sym);
     LinkedQueue<Stock> aQueue;
     int temp = numShares;
     int index = findStock(sym);
     double originalPrice = 0.0;
 
-    if(index != -1)
-    {
-        while(temp > 0)
-        {
+    if(index != -1) {
+        while(temp > 0) {
             if (stocks[index].size() != 0) {
                 originalPrice = stocks[index].getFront()->data.getPurchasePrice();
                 if (temp > stocks[index].getFront()->data.getSharesOwned()) {
@@ -73,22 +65,17 @@ void Portfolio::sell(int numShares, double price, string sym)
                     //stocks[index].getFront()->data.setSharesOwned(stocks[index].getFront()->data.getSharesOwned() - temp);
 
                 }
-            } else
-            {
+            } else {
                 cout << a << ":" << temp << " shares were not sold at $" << price
-                << " due to insufficient shares owned" << endl;
+                     << " due to insufficient shares owned" << endl;
                 temp = 0;
             }
         }
     }
-
-
 }
 
-int Portfolio::findStock(string sym)
-{
-    for (int i = 0; i < numStocks; i++) 
-    {
+int Portfolio::findStock(string sym) {
+    for (int i = 0; i < numStocks; i++) {
         if (stocks[i].size() != 0)
             if (stocks[i].getFront()->get_data().getTickerSymbol() == sym)
                 return i;
@@ -96,7 +83,6 @@ int Portfolio::findStock(string sym)
     return -1;
 }
 
-string Portfolio::toString()
-{
+std::string Portfolio::toString() {
     return "";
 }

@@ -5,14 +5,14 @@
 
 template <class T>
 class Node {
- public:
-  T data;
-  Node<T> *next;
+public:
+    T data;
+    Node<T> *next;
 
-  Node(T a);
+    Node(T a);
 
-  T get_data() const;
-  Node<T>* get_next() const;
+    T get_data() const;
+    Node<T>* get_next() const;
 };
 
 #include "Node.cpp"
