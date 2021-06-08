@@ -4,36 +4,28 @@ using namespace std;
 #include "LinkedQueue.h"
 
 template <class T>
-LinkedQueue<T>::LinkedQueue()
-{
+LinkedQueue<T>::LinkedQueue() {
     front = nullptr;
     rear = nullptr;
     count = 0;
 }
 
 template <class T>
-void LinkedQueue<T>::enqueue(T item)
-{
+void LinkedQueue<T>::enqueue(T item) {
     Node<T>* temp = new Node<T>(item);
 
-    if(rear == NULL)
-    {
+    if(rear == NULL) {
         front = rear = temp;
     }
-    else
-    {
+    else {
         rear->next = temp;
         rear = temp;
     }
-
     count++;
-
 }
 
 template <class T>
-T LinkedQueue<T>::dequeue()
-{
-
+T LinkedQueue<T>::dequeue() {
     Node<T>* temp = new Node<T>(*front);
     T res = temp->data;
 
@@ -47,21 +39,17 @@ T LinkedQueue<T>::dequeue()
 }
 
 template <class T>
-bool LinkedQueue<T>::isEmpty()
-{
+bool LinkedQueue<T>::isEmpty() {
     return front == NULL;
 }
 
 template <class T>
-int LinkedQueue<T>::size()
-{
-
+int LinkedQueue<T>::size() {
     return count;
 }
 
 template <class T>
-void LinkedQueue<T>::display()
-{
+void LinkedQueue<T>::display() {
       Node<T>* temp = front;
       int a = 0;
 
@@ -69,8 +57,6 @@ void LinkedQueue<T>::display()
          cout << temp->data << endl;
          temp = temp->next;
      }
-
-
 }
 
 template<class T>

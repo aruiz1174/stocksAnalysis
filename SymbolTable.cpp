@@ -1,12 +1,10 @@
 #include "SymbolTable.h"
 
-SymbolTable::SymbolTable()
-{
+SymbolTable::SymbolTable() {
     numSymbols = 0;
 }
 
-SymbolTable::SymbolTable(std::ifstream &fileIn)
-{
+SymbolTable::SymbolTable(std::ifstream &fileIn) {
     numSymbols = 0;
     std::string line;
     if (fileIn.is_open()) {
@@ -21,6 +19,25 @@ SymbolTable::SymbolTable(std::ifstream &fileIn)
         std::cout << "File not opened!" << std::endl;
 }
 
+//= overload constructor
+SymbolTable& SymbolTable::operator=(const SymbolTable& other) {
+    numSymbols = other.numSymbols;
+
+    for (int i = 0; i < numSymbols; i++) {
+        symbolPairs.push_back(other.symbolPairs[i]);
+    }
+    return *this;
+}
+
+//copy constructor
+SymbolTable::SymbolTable(const SymbolTable& other) {
+    numSymbols = other.numSymbols;
+
+    for (int i = 0; i < numSymbols; i++) {
+        symbolPairs.push_back(other.symbolPairs[i]);
+    }
+}
+
 std::string SymbolTable::findCompany(std::string aCompany) {
     for (int i = 0; i < numSymbols; i++) {
         if (symbolPairs[i].getCompanyName() == aCompany)
@@ -33,23 +50,5 @@ void SymbolTable::print() {
     for (int i = 0; i < numSymbols; i++) {
         std::cout << i << ".";
         std::cout << symbolPairs[i].getCompanyName() << std::endl;
-    }
-}
-
-SymbolTable& SymbolTable::operator=(const SymbolTable& other)
-{
-    numSymbols = other.numSymbols;
-
-    for (int i = 0; i < numSymbols; i++) {
-        symbolPairs.push_back(other.symbolPairs[i]);
-        }
-    return *this;
-}
-
-SymbolTable::SymbolTable(const SymbolTable& other) {
-    numSymbols = other.numSymbols;
-
-    for (int i = 0; i < numSymbols; i++) {
-        symbolPairs.push_back(other.symbolPairs[i]);
     }
 }

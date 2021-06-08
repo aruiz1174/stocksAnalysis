@@ -8,25 +8,24 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 class Portfolio
 {
-    private:
-    
+private:
     int numStocks;
     SymbolTable symbols;
     double gainLoss;
     vector<LinkedQueue<Stock> > stocks;
-
-    public:
+public:
     Portfolio();
     Portfolio(SymbolTable symbol);
-    void processTransaction(string a, int numShares, double price, string sym);
-    void buy(int numShares, double price, string sym);
-    void sell(int numShares, double price, string sym);
-    int findStock(string sym);
-    string toString();
+
+    void processTransaction(std::string a, int numShares, double price, std::string sym);
+    void buy(int numShares, double price, std::string sym);
+    void sell(int numShares, double price, std::string sym);
+
+    int findStock(std::string sym);
+    std::string toString();
 
 };
 

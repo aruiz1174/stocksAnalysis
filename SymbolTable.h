@@ -9,16 +9,18 @@
 #include "SymbolPair.h"
 
 class SymbolTable {
- private:
+private:
     int numSymbols;
     std::vector<SymbolPair> symbolPairs;
- public:
+public:
     SymbolTable();
     SymbolTable(std::ifstream &fileIn);
-    std::string findCompany(std::string aCompany);
-    void print();
     SymbolTable& operator=(const SymbolTable& other);
     SymbolTable(const SymbolTable& other);
+
+    std::string findCompany(std::string aCompany);
+
+    void print();
 };
 
 #endif

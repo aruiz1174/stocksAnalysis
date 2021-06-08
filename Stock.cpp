@@ -3,63 +3,54 @@
 
 #include "Stock.h"
 #include <string>
-#include <iostream>
-using namespace std;
 
-Stock::Stock()
-{
+Stock::Stock() {
     tickerSym = nullptr;
     sharesOwned = 0;
     purchasePrice = 0.0;
 
 }
 
-Stock::Stock(int shares, double purchase, string ticker)
-{
-    sharesOwned = shares;
-    purchasePrice = purchase;
-    tickerSym = ticker;
-
-}
-
-
-std::string Stock::getTickerSymbol()
-{
-    return tickerSym;
-}
-
-int Stock::getSharesOwned()
-{
-    return sharesOwned;
-}
-
-double Stock::getPurchasePrice()
- {
-     return purchasePrice;
- }
-
-void Stock::setSharesOwned(int shares)
- {
-     sharesOwned = shares;
- }
-
-std::string Stock::toString()
-{
-
-    return "Ticker: " + tickerSym + ", shares: " + to_string(sharesOwned) + ", Price: " + to_string(purchasePrice);
-}
-
+//copy constructor
 Stock::Stock(const Stock& other) {
     tickerSym = other.tickerSym;
     sharesOwned = other.sharesOwned;
     purchasePrice = other.purchasePrice;
 }
 
+//= overload constructor
 Stock& Stock::operator=(const Stock& other) {
-        tickerSym = other.tickerSym;
-        sharesOwned = other.sharesOwned;
-        purchasePrice = other.purchasePrice;
-        return *this;
+    tickerSym = other.tickerSym;
+    sharesOwned = other.sharesOwned;
+    purchasePrice = other.purchasePrice;
+    return *this;
+}
+
+Stock::Stock(int shares, double purchase, std::string ticker) {
+    sharesOwned = shares;
+    purchasePrice = purchase;
+    tickerSym = ticker;
+}
+
+
+std::string Stock::getTickerSymbol() {
+    return tickerSym;
+}
+
+int Stock::getSharesOwned() {
+    return sharesOwned;
+}
+
+double Stock::getPurchasePrice() {
+    return purchasePrice;
+}
+
+void Stock::setSharesOwned(int shares) {
+    sharesOwned = shares;
+}
+
+std::string Stock::toString() {
+    return "Ticker: " + tickerSym + ", shares: " + std::to_string(sharesOwned) + ", Price: " + std::to_string(purchasePrice);
 }
 
 #endif
