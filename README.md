@@ -1,6 +1,6 @@
 # Portfolio
 
-Managing a portfolio that **buys** and **sells** stocks retrieved from a *text file*.
+- Managing a portfolio that **buys** and **sells** stocks retrieved from a *text file*.
 
 ### Next Step:
 <ol>
