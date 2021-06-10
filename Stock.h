@@ -22,7 +22,7 @@ public:
 
     void setSharesOwned(int shares);
 
-    std::string toString();
+    std::ostream& operator<<(std::ostream& os, const Stock& dt);
 };
 
 #endif

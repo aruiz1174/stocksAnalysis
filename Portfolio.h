@@ -23,9 +23,8 @@ public:
     void processTransaction(std::string a, int numShares, double price, std::string sym);
     void buy(int numShares, double price, std::string sym);
     void sell(int numShares, double price, std::string sym);
-
     int findStock(std::string sym);
-    std::string toString();
+    void toString();
 
 };
 

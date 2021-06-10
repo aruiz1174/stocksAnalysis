@@ -83,6 +83,14 @@ int Portfolio::findStock(string sym) {
     return -1;
 }
 
-std::string Portfolio::toString() {
-    return "";
+void Portfolio::toString() 
+{
+    string str;
+    std::cout << "Portfolio: " << std::endl;
+    for(int i = 0; i < numStocks; i++)
+    {
+        stocks[i].display();
+        std::cout << std::endl;
+    }
+
 }

@@ -22,5 +22,6 @@ int main() {
             b.processTransaction(buySell, numShares, price, sym);
         }
     }
+    b.toString();
     secondFile.close();
 }

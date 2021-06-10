@@ -49,8 +49,10 @@ void Stock::setSharesOwned(int shares) {
     sharesOwned = shares;
 }
 
-std::string Stock::toString() {
-    return "Ticker: " + tickerSym + ", shares: " + std::to_string(sharesOwned) + ", Price: " + std::to_string(purchasePrice);
+std::ostream& Stock::operator<<(std::ostream& os, const Stock& dt)
+{
+    os << dt.getTickerSymbol << ": " << dt.getSharesOwned << " " << dt.getPurchasePrice;
+    return os;
 }
 
 #endif
