@@ -2,6 +2,7 @@ using namespace std;
 #include "Node.h"
 #include <iostream>
 #include "LinkedQueue.h"
+#include "Stock.h"
 
 template <class T>
 LinkedQueue<T>::LinkedQueue() {
