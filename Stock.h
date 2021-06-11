@@ -22,7 +22,7 @@ public:
 
     void setSharesOwned(int shares);
 
-    std::ostream& operator<<(std::ostream& os, const Stock& dt);
+    friend std::ostream& operator<<(std::ostream& os, const Stock& dt);
 };
 
 #endif

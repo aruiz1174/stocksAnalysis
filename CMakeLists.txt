@@ -10,4 +10,8 @@ add_executable(stocksAnalysis
         SymbolPair.h
         SymbolTable.cpp
         SymbolTable.h
+        Portfolio.h
+        Portfolio.cpp
+        Stock.h
+        Stock.cpp
         main.cpp)

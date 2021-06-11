@@ -49,9 +49,8 @@ void Stock::setSharesOwned(int shares) {
     sharesOwned = shares;
 }
 
-std::ostream& Stock::operator<<(std::ostream& os, const Stock& dt)
-{
-    os << dt.getTickerSymbol << ": " << dt.getSharesOwned << " " << dt.getPurchasePrice;
+std::ostream& operator<<(std::ostream& os, const Stock& dt) {
+    os << "Shares:" << dt.sharesOwned << " for $" << dt.purchasePrice;
     return os;
 }
 

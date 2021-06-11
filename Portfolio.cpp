@@ -85,12 +85,16 @@ int Portfolio::findStock(string sym) {
 
 void Portfolio::toString() 
 {
-    string str;
     std::cout << "Portfolio: " << std::endl;
-    for(int i = 0; i < numStocks; i++)
+    for (int i = 0; i < numStocks; i++)
     {
-        stocks[i].display();
-        std::cout << std::endl;
+        if (!stocks[i].isEmpty()) {
+            std::cout << std::endl;
+            string str = stocks[i].getFront()->get_data().getTickerSymbol();
+            str.erase(str.size() - 1);
+            str += ":";
+            std::cout << str << std::endl;
+            stocks[i].display();
+        }
     }
-
 }
